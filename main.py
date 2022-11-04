@@ -7,7 +7,7 @@ app = FastAPI()
 @app.get("/")
 async def read_root():
     return "Hello Stas Fe"
-
+'''
 @app.post("/create_file/")
 async def image(image: UploadFile = File(...)):
     try:
@@ -17,8 +17,5 @@ async def image(image: UploadFile = File(...)):
     file_name = os.getcwd()+"/images/"+image.filename.replace(" ", "-")
     with open(file_name,'wb+') as f:
         f.write(image.file.read())
-        #f.close()
-    #file = jsonable_encoder({"imagePath":file_name})
-    #new_image = await add_image(file)
-    #return {"filename": new_image}
     return {"filename": file_name}
+'''
