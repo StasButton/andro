@@ -1,9 +1,6 @@
 import os
 import uvicorn
 from fastapi import FastAPI,  File, UploadFile
-#from fastapi.routing import APIRoute,APIRouter
-#from fastapi.encoders import jsonable_encoder
-#import shutil
 
 app = FastAPI()
 
@@ -25,6 +22,3 @@ async def image(image: UploadFile = File(...)):
     #new_image = await add_image(file)
     #return {"filename": new_image}
     return {"filename": file_name}
-
-
-
