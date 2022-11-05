@@ -9,5 +9,12 @@ def hello():
 
 @app.post("/create_file/")
 def image(image: UploadFile = File(...)):
-    return {"message":"Hello TutLinks.com"}
+    try:
+        os.mkdir("images")
+    except Exception as e:
+        print(e)
+    file_name = os.getcwd()+"/images/"+image.filename.replace(" ", "-")
+    with open(file_name,'wb+') as f:
+        f.write(image.file.read())
+    return {"filename": file_name}
     
