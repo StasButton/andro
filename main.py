@@ -1,5 +1,4 @@
 import os
-#from os import getcwd
 import uvicorn
 from fastapi import FastAPI, File, UploadFile
 
@@ -7,7 +6,9 @@ app = FastAPI()
 
 @app.get("/")
 async def read_root():
-    return {"mes":os.getcwd()}
+    dir = os.getcwd()
+    files = os.listdir(path=dir)
+    return {"mes":files}
 
 
 @app.post("/create_file/")
