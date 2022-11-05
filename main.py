@@ -8,7 +8,11 @@ app = FastAPI()
 async def read_root():
     dir = os.getcwd()
     files = os.listdir(path=dir)
-    return {"mes":files}
+    st = 'empty'
+    for i in files:
+        if i == 'images':
+            st = 'images'      
+    return {"mes":st}
 
 
 @app.post("/create_file/")
