@@ -7,7 +7,7 @@ app = FastAPI()
 
 @app.get("/")
 async def read_root():
-    return {"mes":getcwd()}
+    return {"mes":os.getcwd()}
 
 
 @app.post("/create_file/")
