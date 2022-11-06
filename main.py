@@ -6,9 +6,9 @@ app = FastAPI()
 
 @app.get("/")
 async def read_root():
-    dir = os.getcwd()+'/folder/'
-    files = os.listdir(path=dir)        
-    return {"mes":files}
+    #dir = os.getcwd()+'/folder/'
+    #files = os.listdir(path=dir)        
+    return {"mes":os.getcwd()}
 
 
 @app.post("/upload_file/")
