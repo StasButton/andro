@@ -9,7 +9,7 @@ f = ''
 
 @app.get("/")
 async def read_root():
-    dir = os.getcwd() #+'/folder/'
+    dir = os.getcwd() +'/fold/'
     files = os.listdir(path=dir)        
     return {"mes":files}
 
@@ -17,7 +17,7 @@ async def read_root():
 @app.post("/upload_file/")
 async def image(image: UploadFile = File(...)):
     #file_name = os.getcwd()+"/folder/"+image.filename.replace(" ", "-")
-    file_name = os.getcwd()+"/"+image.filename.replace(" ", "-")
+    file_name = os.getcwd()+"/fold/"+image.filename.replace(" ", "-")
     with open(file_name,'wb+') as f:
         f.write(image.file.read())
     return {"p": os.getcwd()}
@@ -26,27 +26,19 @@ async def image(image: UploadFile = File(...)):
 @app.get("/dl/{name_file}")
 def download_file(name_file: str):
     #return  FileResponse(path=os.getcwd() + "/folder/" + name_file, media_type='application/octet-stream', filename=name_file)
-    return  FileResponse(path=os.getcwd() + "/" + name_file, media_type='application/octet-stream', filename=name_file)
+    return  FileResponse(path=os.getcwd() + "/fold/" + name_file, media_type='application/octet-stream', filename=name_file)
 
 @app.get("/del/")  
 def dF():
-    dir = os.getcwd() #+'/folder/'
+    dir = os.getcwd() +'/fold/'
     files = os.listdir(path=dir)
-    '''
+    
     for i in files:
         try:
             os.remove(dir + i)
         except FileNotFoundError:
             return 'remove fail'
-    '''
+    
     
     return files
-''' 
-@app.post("/create_folder/")
-async def fold():
-    try:
-        os.mkdir("folder")
-    except Exception as e:
-        return e
 
-'''
