@@ -41,11 +41,12 @@ def dF():
     '''
     
     return files
-'''
+
 @app.post("/create_folder/")
 async def fold():
     try:
         os.mkdir("folder")
     except Exception as e:
-        print(e)
-'''   
+        return e
+''' 
+'''
