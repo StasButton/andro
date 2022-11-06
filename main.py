@@ -6,7 +6,7 @@ app = FastAPI()
 
 @app.get("/")
 async def read_root():
-    dir = os.getcwd()+'/images/'
+    dir = os.getcwd()+'/folder/'
     files = os.listdir(path=dir)        
     return {"mes":files}
 
@@ -19,7 +19,7 @@ async def image(image: UploadFile = File(...)):
     except Exception as e:
         print(e)
     '''
-    file_name = os.getcwd()+"/images/"+image.filename.replace(" ", "-")
+    file_name = os.getcwd()+"/folder/"+image.filename.replace(" ", "-")
     with open(file_name,'wb+') as f:
         f.write(image.file.read())
     return {"p": os.getcwd()}
@@ -30,16 +30,13 @@ from fastapi.responses import FileResponse
 
 @app.get("/dl/{name_file}")
 def download_file(name_file: str):
-    return  FileResponse(path=os.getcwd() + "/images/" + name_file, media_type='application/octet-stream', filename=name_file)
+    return  FileResponse(path=os.getcwd() + "/folder/" + name_file, media_type='application/octet-stream', filename=name_file)
 
 @app.get("/del/")  
 def dF():
-    dir = os.getcwd()+'/images/'
+    dir = os.getcwd()+'/folder/'
     files = os.listdir(path=dir)
 
-    #os.remove(dir + files[0])
-
-     
     for i in files:
         try:
             os.remove(dir + i)
