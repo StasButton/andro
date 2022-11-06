@@ -40,7 +40,7 @@ def dF():
             return 'remove fail'
     return files
 
-@app.post("/cl/")
+@app.get("/cl/")
 async def fold():
     dir = os.getcwd() +'/fold/'
     files = os.listdir(path=dir)
