@@ -38,7 +38,15 @@ def dF():
             os.remove(dir + i)
         except FileNotFoundError:
             return 'remove fail'
-    
-    
     return files
 
+@app.post("/cl/")
+async def fold():
+    dir = os.getcwd() +'/fold/'
+    files = os.listdir(path=dir)
+    for i in files:
+        try:
+            os.remove(dir + i)
+        except FileNotFoundError:
+            return 'remove fail'
+    return 'all OK'
