@@ -3,14 +3,16 @@ import os
 from fastapi import FastAPI, File, UploadFile
 from fastapi.responses import FileResponse
 
+import numpy as np
 app = FastAPI()
 
 
 @app.get("/")
 async def read_root():
-    dir = os.getcwd() +'/streamlit/'
-    files = os.listdir(path=dir)        
-    return {"mes":files}
+    #dir = os.getcwd() +'/streamlit/'
+    #files = os.listdir(path=dir) 
+    d = np.array([1,2,3])
+    return 'OK'
 
 '''
 @app.post("/upload_file/")
