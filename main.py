@@ -11,7 +11,7 @@ app = FastAPI()
 async def read_root():
     #dir = os.getcwd() +'/streamlit/'
     #files = os.listdir(path=dir) 
-    d = np.array([1,2,3])
+    #d = np.array([1,2,3])
     return 'OK'
 
 '''
