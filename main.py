@@ -6,6 +6,8 @@
 import io
 import streamlit as st
 from PIL import Image
+from tensorflow.keras.preprocessing import image
+from tensorflow.keras.applications.efficientnet import preprocess_input, decode_predictions
 import numpy as np
 
 
