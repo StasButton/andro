@@ -10,8 +10,15 @@ import numpy as np
 
 
 @st.cache(allow_output_mutation=True)
-def load_model():
-    return 'OK'
+
+def load_image():
+    uploaded_file = st.file_uploader(label='Выберите изображение для распознавания')
+    if uploaded_file is not None:
+        image_data = uploaded_file.getvalue()
+        st.image(image_data)
+        return Image.open(io.BytesIO(image_data))
+    else:
+        return None
 
 st.title('Классификации изображений в облаке')
 
