@@ -1,16 +1,23 @@
-import os
+#import os
 #import uvicorn
-from fastapi import FastAPI, File, UploadFile
-from fastapi.responses import FileResponse
+#from fastapi import FastAPI, File, UploadFile
+#from fastapi.responses import FileResponse
 
+import io
 import streamlit as st
 from PIL import Image
 import numpy as np
 
+
+@st.cache(allow_output_mutation=True)
+def load_model():
+    return 'OK'
+
+
 #import numpy as np
-app = FastAPI()
+#app = FastAPI()
 
-
+'''
 @app.get("/")
 async def read_root():
     #dir = os.getcwd() +'/streamlit/'
@@ -18,7 +25,7 @@ async def read_root():
     #d = np.array([1,2,3])
     return 'OK'
 
-'''
+
 @app.post("/upload_file/")
 async def image(image: UploadFile = File(...)):
     #file_name = os.getcwd()+"/folder/"+image.filename.replace(" ", "-")
