@@ -12,7 +12,7 @@ import numpy as np
 
 
 @st.cache(allow_output_mutation=True)
-
+@st.cache(suppress_st_warning=True)
 def load_image():
     uploaded_file = st.file_uploader(label='Выберите изображение для распознавания')
     if uploaded_file is not None:
