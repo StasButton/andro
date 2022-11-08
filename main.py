@@ -21,5 +21,6 @@ def load_image():
         return None
 
 st.title('Классификации изображений в облаке')
+img = load_image()
 
 
