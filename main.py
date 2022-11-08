@@ -38,7 +38,7 @@ model = load_model()
 
 st.title('Классификации изображений в облаке Streamlit')
 img = load_image()
-result = st.button('Распознать изображение')
+#result = st.button('Распознать изображение')
 #if result:
  #   x = preprocess_image(img)
   #  preds = model.predict(x)
