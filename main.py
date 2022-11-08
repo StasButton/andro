@@ -4,15 +4,15 @@ from fastapi import FastAPI, File, UploadFile
 from fastapi.responses import FileResponse
 
 app = FastAPI()
-f = ''
+
 
 @app.get("/")
 async def read_root():
-    dir = os.getcwd() +'/fold/'
+    dir = os.getcwd() +'/streamlit/'
     files = os.listdir(path=dir)        
     return {"mes":files}
 
-
+'''
 @app.post("/upload_file/")
 async def image(image: UploadFile = File(...)):
     #file_name = os.getcwd()+"/folder/"+image.filename.replace(" ", "-")
@@ -49,3 +49,4 @@ async def fold():
         except FileNotFoundError:
             return 'remove fail'
     return 'all OK'
+'''
