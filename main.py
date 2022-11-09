@@ -10,7 +10,7 @@ def load_image():
         image_data = uploaded_file.getvalue()
         st.image(image_data)
         ib = Image.open(io.BytesIO(image_data))
-        return io 
+        return ib 
     else:
         return None
 
