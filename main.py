@@ -7,9 +7,9 @@ from tensorflow.keras.preprocessing import image
 from tensorflow.keras.applications.efficientnet import preprocess_input, decode_predictions
 
 
-@st.cache(allow_output_mutation=True)
-def load_model():
-   return 'OK' #EfficientNetB0(weights='imagenet')
+#@st.cache(allow_output_mutation=True)
+#def load_model():
+ #  return 'OK' #EfficientNetB0(weights='imagenet')
 
 #def preprocess_image(img):
  #   img = img.resize((224, 224))
