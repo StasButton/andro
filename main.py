@@ -5,18 +5,19 @@ import numpy as np
 from tensorflow.keras.preprocessing import image
 
 def load_image():
-    uploaded_file = st.file_uploader(label='Выберите изображение для распознавания')
+    uploaded_file = st.file_uploader(label='Выберите изображение')
     if uploaded_file is not None:
         image_data = uploaded_file.getvalue()
         st.image(image_data)
-        ib = Image.open(io.BytesIO(image_data))
-        return ib 
+        s = Image.open(io.BytesIO(image_data))
+        return image_data 
     else:
         return None
 
-
 st.title('Классификации изображений в облаке Streamlit')
-io = load_image()
-result = st.button('скачать')
-if result:
-    st.download_button(label='скачать2')
+s = load_image()
+if s is not None:
+    st.download_button(label='скачать',data=s,file_name = 'O.jpg')
+
+
+
