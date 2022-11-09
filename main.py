@@ -17,6 +17,6 @@ def load_image():
 
 st.title('Классификации изображений в облаке Streamlit')
 io = load_image()
-result = st.button()
+result = st.button('скачать')
 if result:
-    st.download_button(label='скачать')
+    st.download_button(label='скачать2')
