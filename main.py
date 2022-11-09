@@ -2,16 +2,15 @@ import io
 import streamlit as st
 from PIL import Image
 import numpy as np
-from tensorflow.keras.applications import EfficientNetB0
+#from tensorflow.keras.applications import EfficientNetB0
 from tensorflow.keras.preprocessing import image
 from tensorflow.keras.applications.efficientnet import preprocess_input, decode_predictions
 
 
 @st.cache(allow_output_mutation=True)
-
-
 def load_model():
    return 'OK' #EfficientNetB0(weights='imagenet')
+
 #def preprocess_image(img):
  #   img = img.resize((224, 224))
   #  x = image.img_to_array(img)
