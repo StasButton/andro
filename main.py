@@ -11,7 +11,7 @@ def load_image():
         st.image(image_data)
         s = Image.open(io.BytesIO(image_data))
         #st.text(type(s))
-        return s #image_data 
+        return image_data 
     else:
         return None
 
