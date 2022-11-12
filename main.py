@@ -15,7 +15,7 @@ def load_image():
         
         img_byte_arr = io.BytesIO()
         
-        st.text(type(ar))
+        #st.text(type(ar))
         return  image_data 
     else:
         return None
