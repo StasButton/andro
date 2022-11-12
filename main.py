@@ -20,10 +20,10 @@ def load_image():
         
         img_byte_arr = io.BytesIO(ar)
         img.save(img_byte_arr, format='PNG')
-        image_data_arr = img.getvalue()
+        #image_data_arr = img.getvalue()
         
         #st.text(type(ar))
-        return  image_data 
+        return  img_byte_arr #image_data 
     else:
         return None
 
