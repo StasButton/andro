@@ -10,7 +10,9 @@ def load_image():
         image_data = uploaded_file.getvalue()
         st.image(image_data)
         img = Image.open(io.BytesIO(image_data))
-        st.text(type(img))
+        #
+        ar = np.array(img)
+        st.text(type(ar))
         return  s #image_data 
     else:
         return None
