@@ -14,6 +14,8 @@ def load_image():
         ar = np.array(img)
         
         img_byte_arr = io.BytesIO()
+        roi_img.save(img_byte_arr, format='PNG')
+        img_byte_arr = img_byte_arr.getvalue()
         
         #st.text(type(ar))
         return  image_data 
