@@ -12,6 +12,9 @@ def load_image():
         img = Image.open(io.BytesIO(image_data))
         #
         ar = np.array(img)
+        
+        img_byte_arr = io.BytesIO()
+        
         st.text(type(ar))
         return  image_data 
     else:
