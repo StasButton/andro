@@ -13,7 +13,7 @@ def load_image():
         #
         ar = np.array(img)
         st.text(type(ar))
-        return  s #image_data 
+        return  ar #image_data 
     else:
         return None
 
