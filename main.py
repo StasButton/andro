@@ -9,10 +9,9 @@ def load_image():
     if uploaded_file is not None:
         image_data = uploaded_file.getvalue()
         st.image(image_data)
-        s = Image.open(io.BytesIO(image_data))
-        s1 = Image.open(image_data)
-        #st.text(type(s))
-        return  s1 #image_data 
+        img = Image.open(io.BytesIO(image_data))
+        st.text(type(img))
+        return  s #image_data 
     else:
         return None
 
