@@ -10,15 +10,13 @@ def load_image():
         image_data = uploaded_file.getvalue()
         st.image(image_data)
         s = Image.open(io.BytesIO(image_data))
+        st.text(type(s))
         return s#image_data 
     else:
         return None
 
 st.title('Загрузка, скачивание изображений')
-st.text('Загрузка, ск')
+
 s = load_image()
 if s is not None:
     st.download_button(label='скачать',data=s,file_name = 'O.jpg')
-
-
-
