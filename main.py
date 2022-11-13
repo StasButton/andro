@@ -24,12 +24,9 @@ if s is not None:
     s = 1
     #st.download_button(label='скачать',data=s,file_name = 'O.jpg')
     
-'''
-img = load_image()
+
+
 result = st.button('Распознать изображение')
 if result:
-    #x = preprocess_image(img)
-    #preds = model.predict(x)
-    st.write('**Результаты распознавания:**')
-    #print_predictions(preds)
-'''
+    s = 1
+
