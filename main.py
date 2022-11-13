@@ -19,9 +19,9 @@ def load_image():
 
 st.title('Загрузка, скачивание изображений')
 
-s = load_image()
-if s is not None:
-    st.download_button(label='скачать',data=s,file_name = 'O.jpg')
+load_image()
+#if s is not None:
+    #st.download_button(label='скачать',data=s,file_name = 'O.jpg')
     
 '''
 img = load_image()
