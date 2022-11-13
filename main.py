@@ -14,15 +14,8 @@ def load_image():
         image_data = uploaded_file.getvalue()
         st.image(image_data)
         img = Image.open(io.BytesIO(image_data))
-        #
-        ar = np.array(img)
-        img = utils.array_to_img(ar)
-        
-        img_byte_arr = io.BytesIO(ar)
-        img.save(img_byte_arr, format='PNG')
-        
-        #st.text(type(ar))
-        return  img_byte_arr  #image_data 
+
+        return img  
     else:
         return None
 
