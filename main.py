@@ -1,8 +1,7 @@
 import streamlit as st
 from subprocess import Popen
 
-def get_gps_coordinates()
-    #-> Coordinates:
+def get_gps_coordinates():   #-> Coordinates:
     """Returns current coordinates using MacBook GPS"""
     process = Popen(["whereami"], stdout=PIPE)
     (output, err) = process.communicate()
