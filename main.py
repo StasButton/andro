@@ -18,4 +18,5 @@ def get_gps_coordinates():   #-> Coordinates:
     #return Coordinates(longitude=longitude, latitude=latitude)
     return longitude, latitude
 
-
+ long, lat = get_gps_coordinates()
+ st.text(long,' ',lat)
