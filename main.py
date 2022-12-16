@@ -1,8 +1,9 @@
-import android
+#import android
 import streamlit as st
 
-droid = android.Android()
+#droid = android.Android()
 
+'''
 droid.startLocating()
 #print "reading GPS ..."
 event = droid.eventWaitFor('location',10000).result
@@ -15,3 +16,4 @@ if event['name'] == "location":
     lng = str(event['data']['network']['longitude'])    
   latlng = 'lat: ' + lat + ' lng: ' + lng
   st.text(latlng)
+  '''
